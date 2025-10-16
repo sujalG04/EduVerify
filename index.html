@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification on Blockchain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Certificate Verification System</h1>
+        <p>A simple simulation of verifying PDF certificates on a blockchain.</p>
+
+        <div class="form-container">
+            <h2>Issue a New Certificate</h2>
+            <input type="text" id="studentName" placeholder="Student Name" required>
+            <input type="text" id="courseName" placeholder="Course Name" required>
+            <input type="text" id="institutionName" placeholder="Issuing Institution" required>
+            <label for="pdfFile">Upload Certificate PDF:</label>
+            <input type="file" id="pdfFile" accept="application/pdf" required>
+            <button id="issueBtn">Issue & Add to Blockchain</button>
+        </div>
+
+        <div class="verification-container">
+            <h2>Verify a Specific Certificate</h2>
+            <p>Upload a certificate to check its authenticity against the blockchain record.</p>
+            <label for="blockNumber">Block # to Verify:</label>
+            <input type="number" id="blockNumber" placeholder="Enter Block Index (e.g., 1)">
+            <label for="pdfToVerify">Certificate PDF to Verify:</label>
+            <input type="file" id="pdfToVerify" accept="application/pdf">
+            <button id="verifyCertBtn">Verify Certificate</button>
+            <p id="singleCertStatus">Status: Awaiting verification.</p>
+        </div>
+
+        <div class="verification-container">
+            <h2>Verify Blockchain Integrity</h2>
+            <button id="verifyChainBtn">Verify Entire Chain</button>
+            <p id="chainStatus">Status: Not yet verified.</p>
+        </div>
+
+        <div class="blockchain-container">
+            <h2>Blockchain Blocks</h2>
+            <div id="blockchain"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
